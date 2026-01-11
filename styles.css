@@ -157,3 +157,10 @@ body {
   margin-bottom:16px;
   font-weight:500;
 }
+
+.reach-out {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #475569;
+  font-style: italic;
+}
