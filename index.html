@@ -13,216 +13,252 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background:
-    radial-gradient(circle at 25% 35%, #9333ea55, transparent 40%),
-    radial-gradient(circle at 75% 65%, #ec489955, transparent 45%),
-    linear-gradient(135deg, #f8fafc, #eef2ff);
+  background: #f8fafc;
   overflow-x: hidden;
 }
 
-/* BACKGROUND BLOBS */
+/* ===========================
+   STRONG ANIMATED BACKGROUND
+=========================== */
 .bg-blob {
   position: fixed;
   width: 520px;
   height: 520px;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.6;
+  opacity: 0.65;
   z-index: -1;
 }
+
 .blob-1 {
-  background: radial-gradient(circle, #6366f1, transparent 60%);
+  background: radial-gradient(circle at 30% 30%, #6366f1, #a5b4fc);
   top: -160px;
   left: -160px;
+  animation: blobMove1 20s ease-in-out infinite;
 }
 .blob-2 {
-  background: radial-gradient(circle, #ec4899, transparent 60%);
+  background: radial-gradient(circle at 30% 30%, #ec4899, #fbcfe8);
   bottom: -180px;
+  left: 25%;
+  animation: blobMove2 24s ease-in-out infinite;
+}
+.blob-3 {
+  background: radial-gradient(circle at 30% 30%, #8b5cf6, #ddd6fe);
+  top: 20%;
   right: -180px;
+  animation: blobMove3 22s ease-in-out infinite;
 }
 
-/* CONTAINER */
+@keyframes blobMove1 {
+  50% { transform: translate(80px,40px) scale(1.15); }
+}
+@keyframes blobMove2 {
+  50% { transform: translate(-60px,-80px) scale(1.12); }
+}
+@keyframes blobMove3 {
+  50% { transform: translate(-90px,60px) scale(1.18); }
+}
+
+/* ===========================
+   Layout
+=========================== */
 .container {
   max-width: 1200px;
   margin: 60px auto;
   padding: 20px;
 }
 
-/* HEADER */
+/* ===========================
+   HEADER
+=========================== */
 .header {
   background: white;
-  border-radius: 26px;
-  padding: 22px 40px;
+  border-radius: 22px;
+  padding: 24px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 30px 80px rgba(0,0,0,0.12);
   margin-bottom: 60px;
-  position: relative;
-  z-index: 5;
 }
 
-.logo {
-  height: 42px;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
+.header-left img {
+  height: 46px;
+}
+
+/* 🔹 YOUR LOGO (SUBTLE) */
+.my-logo {
+  height: 32px;
+  opacity: 0.85;
+}
+
+/* ===========================
+   NAV
+=========================== */
 .nav a {
-  margin-left: 28px;
+  margin-left: 26px;
   text-decoration: none;
   color: #64748b;
   font-weight: 500;
 }
-
-.nav a.active {
-  color: #4f46e5;
-  border-bottom: 2px solid #4f46e5;
-  padding-bottom: 4px;
-}
-
 .nav .cta {
   background:#4f46e5;
   color:white;
-  padding:10px 20px;
-  border-radius:22px;
-  box-shadow: 0 0 18px rgba(79,70,229,.4);
+  padding:10px 18px;
+  border-radius:20px;
 }
 
-/* CARD */
+/* ===========================
+   Card
+=========================== */
 .card {
   background: white;
-  border-radius: 34px;
-  padding: 60px;
+  border-radius: 28px;
+  padding: 50px;
   box-shadow: 0 40px 100px rgba(0,0,0,0.12);
+  margin-bottom: 80px;
 }
 
-/* HERO */
+/* ===========================
+   Home
+=========================== */
 .hero {
   display:grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 60px;
-  align-items: center;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
 }
-
-.hero h1 {
-  font-size: 52px;
-  color:#0f172a;
-}
-
-.hero p {
-  margin-top: 18px;
-  font-size: 18px;
-  color:#475569;
-}
-
+.hero h1 { font-size:48px; color:#0f172a; }
+.hero p { margin-top:20px; font-size:18px; color:#475569; line-height:1.6; }
 .hero button {
-  margin-top: 32px;
+  margin-top:30px;
   background:#4f46e5;
   color:white;
   border:none;
-  padding:14px 34px;
-  border-radius:999px;
+  padding:14px 32px;
+  border-radius:30px;
+}
+.hero img {
+  max-width:420px;
+  animation: heroFloat 6s ease-in-out infinite;
+}
+@keyframes heroFloat { 50% { transform: translateY(-16px); } }
+
+/* ===========================
+   Schedule
+=========================== */
+.schedule-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+}
+.schedule-card {
+  background:#f8fafc;
+  padding:28px;
+  border-radius:22px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+}
+.schedule-card h4 { margin-bottom:14px; }
+.schedule-card p { font-size:14px; margin:6px 0; color:#475569; }
+
+.badge {
+  display:inline-block;
+  margin-top:14px;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
   font-weight:600;
-  cursor:pointer;
-  box-shadow: 0 12px 30px rgba(79,70,229,.4);
+}
+.planned { background:#e0e7ff; color:#3730a3; }
+.tentative { background:#fff3e0; color:#c2410c; }
+
+/* ===========================
+   Management
+=========================== */
+.topic {
+  background:#f1f5f9;
+  padding:18px 24px;
+  border-radius:16px;
+  margin-bottom:16px;
+  font-weight:500;
 }
 
-/* ANNOUNCEMENTS */
-.announcement-box {
-  background: linear-gradient(135deg,#eef2ff,#ede9fe);
-  border-radius: 26px;
-  padding: 28px;
-  box-shadow: 0 30px 80px rgba(79,70,229,.25);
+/* ===========================
+   Notes
+=========================== */
+.notes ul {
+  padding-left:22px;
+  color:#475569;
+  line-height:1.8;
 }
 
-.announcement-box h3 {
-  color:#4f46e5;
-  margin-bottom: 18px;
-}
-
-.announcement-scroll {
-  height: 130px;
-  overflow: hidden;
-}
-
-.announcement-scroll ul {
-  list-style: none;
-  animation: scrollUp 10s linear infinite;
-}
-
-.announcement-scroll li {
-  background:white;
-  padding:12px 16px;
-  border-radius:14px;
-  margin-bottom:10px;
-  font-size:14px;
-  color:#1f2937;
-}
-
-@keyframes scrollUp {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-100%); }
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-  .hero {
-    grid-template-columns:1fr;
-  }
-  .announcement-box {
-    margin-top:40px;
-  }
+/* 🔹 Reach-out line */
+.reach-out {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #475569;
+  font-style: italic;
 }
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
+<!-- Background blobs -->
 <div class="bg-blob blob-1"></div>
 <div class="bg-blob blob-2"></div>
+<div class="bg-blob blob-3"></div>
 
 <div class="container">
 
-<!-- HEADER -->
+<!-- Header -->
 <div class="header">
-  <img src="stellantis.png" alt="Stellantis Logo" class="logo">
+  <div class="header-left">
+    <img src="stellantis.png" alt="Stellantis Logo">
+    <img src="mylogo.png" alt="Barath Logo" class="my-logo">
+  </div>
 
   <div class="nav">
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Home</a>
     <a href="schedule.html">Schedule</a>
     <a href="topics.html">Topics</a>
     <a href="view.html" class="cta">View</a>
   </div>
 </div>
 
-<!-- HERO -->
-<div class="card">
+<!-- Home -->
+<div class="card" id="home">
   <div class="hero">
-
-    <!-- LEFT -->
     <div>
-      <h1>Knowledge Sharing<br>System 2026</h1>
+      <h1>Knowledge Sharing System 2026</h1>
       <p>Modern internal portal to track KSS ownership and topics.</p>
       <button onclick="location.href='schedule.html'">View KSS Schedule</button>
     </div>
-
-    <!-- RIGHT -->
-    <div class="announcement-box">
-      <h3>📣 Announcements</h3>
-      <div class="announcement-scroll">
-        <ul>
-          <li>✅ KSS Portal launched for 2026 planning</li>
-          <li>📅 Weekly KSS sessions every Wednesday</li>
-          <li>🧩 Team members to update topics as per schedule</li>
-          <li>🏆 Best KSS session recognition coming soon</li>
-        </ul>
-      </div>
-    </div>
-
+    <img src="mylogo.png">
   </div>
 </div>
 
+<!-- Notes -->
+<div class="card notes" id="notes">
+<h2>Important Notes</h2>
+<ul>
+<li>KSS conducted every Wednesday</li>
+<li>Only official holiday weeks skipped</li>
+<li>Topics to be confirmed by owners</li>
+</ul>
+
+<!-- 🔹 Reach out line -->
+<div class="reach-out">
+  For any queries or topic updates, please reach out to <strong>Barath A S</strong>.
+</div>
 </div>
 
+</div>
 </body>
 </html>
