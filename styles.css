@@ -171,19 +171,15 @@ body {
   gap: 16px;
 }
 
-/* ===== FORCE FIX FOR MY LOGO ===== */
-.header img.my-logo {
-  height: 24px !important;
+/* FINAL FORCE FIX — HERO TITLE LOGO */
+.kss-title .my-logo {
+  height: 20px !important;
   width: auto !important;
-  max-height: 24px !important;
-  max-width: 90px !important;
+  max-width: 70px !important;
   object-fit: contain !important;
+  vertical-align: middle !important;
 }
 
-/* Prevent header from stretching logo */
-.header {
-  align-items: center;
-}
 
 
 
