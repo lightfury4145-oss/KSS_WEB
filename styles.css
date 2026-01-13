@@ -181,10 +181,10 @@ body {
 }
 .training-btn {
   display: inline-block;
-  margin-top: 14px;
-  padding: 8px 16px;
-  border-radius: 18px;
-  font-size: 13px;
+  margin-top: 12px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 12px;
   font-weight: 600;
   text-decoration: none;
   background: #ecfeff;
@@ -195,6 +195,8 @@ body {
 .training-btn:hover {
   background: #cffafe;
 }
+
+
 
 
 
