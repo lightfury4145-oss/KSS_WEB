@@ -172,10 +172,10 @@ body {
 }
 
 .my-logo {
-  height: 42px;
-  max-width: 84px;
+  height: 28px;          /* ⬅️ reduce size (this is the key line) */
+  max-width: 90px;
   object-fit: contain;
-  display: block;
 }
+
 
 
