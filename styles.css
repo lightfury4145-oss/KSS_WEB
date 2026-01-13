@@ -171,11 +171,16 @@ body {
   gap: 16px;
 }
 
+/* FORCE LOGO SIZE — FINAL OVERRIDE */
 .my-logo {
-  height: 28px;          /* ⬅️ reduce size (this is the key line) */
-  max-width: 90px;
-  object-fit: contain;
+  height: 22px !important;
+  width: auto !important;
+  max-width: 80px !important;
+  object-fit: contain !important;
+  display: block;
 }
+
+
 
 
 
