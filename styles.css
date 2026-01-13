@@ -171,14 +171,21 @@ body {
   gap: 16px;
 }
 
-/* FORCE LOGO SIZE — FINAL OVERRIDE */
-.my-logo {
-  height: 22px !important;
+/* ===== FORCE FIX FOR MY LOGO ===== */
+.header img.my-logo {
+  height: 24px !important;
   width: auto !important;
-  max-width: 80px !important;
+  max-height: 24px !important;
+  max-width: 90px !important;
   object-fit: contain !important;
-  display: block;
 }
+
+/* Prevent header from stretching logo */
+.header {
+  align-items: center;
+}
+
+
 
 
 
