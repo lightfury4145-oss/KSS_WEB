@@ -171,7 +171,10 @@ body {
   gap: 16px;
 }
 
-.kss-logo {
-  height: 48px;        /* adjust if needed */
-  width: auto;
+.my-logo {
+  height: 42px;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
 }
+
