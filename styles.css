@@ -173,8 +173,9 @@ body {
 
 .my-logo {
   height: 42px;
-  max-width: 120px;
+  max-width: 84px;
   object-fit: contain;
   display: block;
 }
+
 
