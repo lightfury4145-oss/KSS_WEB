@@ -148,6 +148,8 @@ body {
 }
 .planned { background:#e0e7ff; color:#3730a3; }
 .tentative { background:#fff3e0; color:#c2410c; }
+.completed {background: #dcfce7; color: #166534; }
+
 
 /* ===== TOPICS ===== */
 .topic {
@@ -179,6 +181,7 @@ body {
   object-fit: contain !important;
   vertical-align: middle !important;
 }
+
 
 
 
