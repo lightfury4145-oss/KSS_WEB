@@ -179,25 +179,6 @@ body {
   object-fit: contain !important;
   vertical-align: middle !important;
 }
-.training-btn {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 6px 14px;
-  border-radius: 16px;
-  font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  background: #ecfeff;
-  color: #0369a1;
-  border: 1px solid #67e8f9;
-}
-
-.training-btn:hover {
-  background: #cffafe;
-}
-
-
-
 
 
 
